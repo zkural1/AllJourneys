@@ -1,5 +1,41 @@
 {
-  "name": "AllJourneys",
-  "private": true,
-  "dependencies": {}
+  "name": "alljourneys",
+  "version": "1.0.0",
+  "description": "## MVP Checklist * New account creation, login, and guest/demo login * A production README  * Hosting on Heroku * Searchbar for parks/trails * Use user location to find nearby parks * Find multiple trails within a park * Users can like and comment on hikes",
+  "main": "webpack.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-player": "^2.9.0",
+    "react-redux": "^7.2.4",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.0",
+    "webpack": "^5.42.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --mode=development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhkl12/AllJourneys.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhkl12/AllJourneys/issues"
+  },
+  "homepage": "https://github.com/jhkl12/AllJourneys#readme"
 }
