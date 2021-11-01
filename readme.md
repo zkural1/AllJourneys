@@ -7,5 +7,5 @@
 * Searchbar for parks/trails
 * Use user location to find nearby parks
 * Find multiple trails within a park
-* Users can like and comment on hikes 
+* Users can like and comment on trails 
 :.)

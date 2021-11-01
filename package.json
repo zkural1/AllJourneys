@@ -1,7 +1,7 @@
 {
   "name": "alljourneys",
   "version": "1.0.0",
-  "description": "## MVP Checklist * New account creation, login, and guest/demo login * A production README  * Hosting on Heroku * Searchbar for parks/trails * Use user location to find nearby parks * Find multiple trails within a park * Users can like and comment on hikes",
+  "description": "## MVP Checklist * New account creation, login, and guest/demo login * A production README  * Hosting on Heroku * Searchbar for parks/trails * Use user location to find nearby parks * Find multiple trails within a park * Users can like and comment on trails",
   "main": "webpack.config.js",
   "directories": {
     "lib": "lib",
@@ -23,7 +23,12 @@
     "redux-thunk": "^2.4.0",
     "webpack": "^5.42.0"
   },
+  "engines": {
+    "node": "12.5.0",
+    "npm": "6.9.0"
+  },
   "scripts": {
+    "postinstall": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --mode=development --watch"
   },
