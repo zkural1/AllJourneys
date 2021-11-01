@@ -21,7 +21,8 @@
     "redux": "^4.1.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.0",
-    "webpack": "^5.42.0"
+    "webpack": "^5.42.0",
+    "webpack-cli": "^4.9.1"
   },
   "engines": {
     "node": "14.17.6",
