@@ -21,7 +21,7 @@ class TrailShow extends React.Component {
                 <p>Length: {trail.length}</p>
                 <p>Route Type: {trail.route_type}</p>
                 <div id='map_div'>
-                    <ParkMap location = {[trail.lat,trail.lng]} />
+                    <ParkMap location = {[trail.lng,trail.lat]} />
                 </div>
             </div>
         )}

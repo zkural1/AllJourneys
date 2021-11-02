@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import TrailShow from "./trail_show";
-import { fetchTrail, clearTrails } from "../../actions/trail";
+import { fetchTrail } from "../../actions/trail";
 
 const mSTP = (state, ownProps) => {
     return {

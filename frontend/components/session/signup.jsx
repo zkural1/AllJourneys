@@ -17,6 +17,18 @@ class Signup extends React.Component {
     return (e) => this.setState({ [type]: e.target.value });
   }
 
+  renderErrors() {
+    debugger
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
   handleSubmit(e) {
     e.preventDefault();
     this.props
@@ -25,9 +37,11 @@ class Signup extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="session-form">
         <h2>Sign Up</h2>
+        {this.renderErrors()}
         <form>
           <label>
             First Name:

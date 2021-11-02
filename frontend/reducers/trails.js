@@ -1,6 +1,5 @@
 import { RECEIVE_TRAIL } from '../actions/trail'
 
-// remove clear_trails (not needed)
 const trailsReducer = (state = {}, action) => {
     
     Object.freeze(state);

@@ -1,0 +1,33 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_right_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 8px;
+  margin-left: 8px;
+}
+
+.signup_btn {
+//   font-size: 13px;
+//   font-weight: 600;
+//   padding: 10 px 15 px;
+//   border-radius: 30 px;
+//   margin-left: 8 px;
+//   background-color: #219ad8;
+//   border: 2 px solid #219ad8;
+//   color: white;
+}
+.signup_btn_txt {
+//   color: white;
+}
+.login_btn {
+  margin-left: 8px;
+}
+.login_btn_txt {
+}

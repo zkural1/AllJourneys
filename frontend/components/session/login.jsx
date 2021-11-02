@@ -28,6 +28,18 @@ class Login extends React.Component {
       this.setState({ [type]: e.target.value });
     };
   }
+  renderErrors() {
+    debugger
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -38,6 +50,7 @@ class Login extends React.Component {
     return (
       <div className="session-form">
         <h2>Log In!</h2>
+        {this.renderErrors()}
         <form>
           <label>
             Email:
