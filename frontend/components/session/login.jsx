@@ -22,20 +22,19 @@ class Login extends React.Component {
       () => this.handleSubmit(e)
     );
   }
-
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
     };
   }
+  componentDidMount() {
+    this.props.clearErrors();
+  }
   renderErrors() {
-    debugger
-    return(
+    return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
+          <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );

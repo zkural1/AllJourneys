@@ -8,7 +8,7 @@ const display = currentUser ? (
       <button onClick={logout}>Logout</button>
     </div>
   ) : (
-    <div className="nav_right_container">
+    <div className="login_sign">
     <div className="signup_btn">
       <Link className="signup_btn_txt" to="/signup">Sign Up</Link>
       </div>
@@ -19,8 +19,10 @@ const display = currentUser ? (
   );
   return (
     <header className="nav-bar">
-      <h1 className="logo">AllJourneys</h1>
+      <Link className="logo" to="/"><h1>AllJourneys</h1></Link>
+      <div className="nav_right_container">
         {display}
+      </div>
     </header>
   )
 }

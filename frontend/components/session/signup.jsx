@@ -17,14 +17,14 @@ class Signup extends React.Component {
     return (e) => this.setState({ [type]: e.target.value });
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
   renderErrors() {
-    debugger
-    return(
+    return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
+          <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );
@@ -37,7 +37,7 @@ class Signup extends React.Component {
   }
 
   render() {
-    debugger
+    debugger;
     return (
       <div className="session-form">
         <h2>Sign Up</h2>
