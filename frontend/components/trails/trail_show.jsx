@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from 'react-router-dom';
+import ParkMap from "../map/park_map";
 
 class TrailShow extends React.Component {
 
@@ -13,16 +14,22 @@ class TrailShow extends React.Component {
 
     render() {
         const trail = this.props.trail
-
-        return (
+        if (trail) {return (
             <div className="trail">
-                {fi}
                 <h1>{trail.name}</h1>
                 <p>Summary: {trail.summary}</p>
                 <p>Length: {trail.length}</p>
                 <p>Route Type: {trail.route_type}</p>
+                <div id='map_div'>
+                    <ParkMap location = {[trail.lat,trail.lng]} />
+                </div>
             </div>
-        )
+        )}
+        else{
+            return ( 
+            <div></div>
+            )
+        }
     }
 }
 

@@ -19,7 +19,6 @@
 
 /node_modules
 /yarn-error.log
-
 /public/assets
 .byebug_history
 
@@ -35,3 +34,4 @@ bundle.js.map
 .byebug_history
 .DS_Store
 npm-debug.log
+/access_token.js

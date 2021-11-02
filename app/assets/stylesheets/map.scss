@@ -1,0 +1,12 @@
+
+#map_div2{
+    height: 400px;
+}
+
+.marker{
+    content: url('map-marker.svg');
+  background-size: cover;
+  width: 25px;
+  cursor: pointer;
+  color: green
+}
