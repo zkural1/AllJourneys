@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export default ({ currentUser, logout }) => {
 const display = currentUser ? (
@@ -8,19 +10,20 @@ const display = currentUser ? (
       <button onClick={logout}>Logout</button>
     </div>
   ) : (
-    <div className="login_sign">
-    <div className="signup_btn">
-      <Link className="signup_btn_txt" to="/signup">Sign Up</Link>
+    <div className="login-sign">
+    <div className="signup-btn">
+      <Link className="signup-btn-txt" to="/signup">Sign Up</Link>
       </div>
-      <div className="login_btn">
-      <Link className="login_btn_txt" to="/login">Log In</Link>
+      <div className="login-btn">
+      <Link className="login-btn-txt" to="/login">Log In</Link>
     </div>
     </div>
   );
   return (
     <header className="nav-bar">
-      <Link className="logo" to="/"><h1>AllJourneys</h1></Link>
-      <div className="nav_right_container">
+      <div className="explore"></div>
+      <Link className="logo" to="/"><FontAwesomeIcon icon="mountain" /><h1>AllJourneys</h1></Link>
+      <div className="nav-right-container">
         {display}
       </div>
     </header>

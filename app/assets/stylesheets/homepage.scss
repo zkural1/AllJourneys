@@ -1,0 +1,42 @@
+.homepage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.homepage {
+  height: 300px;
+  width: 100%;
+  background-image: url("homepage.png");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.slogan-search {
+  z-index: 1;
+  font-size: 100;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#search-wrapper {
+  top: 325px;
+  background-color: white;
+  border-radius: 100%;
+}
+#slogan {
+  z-index: 1;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 100;
+  color: white;
+}

@@ -9,6 +9,11 @@ import HomeContainer from './home/home_container';
 import Footer from './nav/footer';
 import TrailShowContainer from './trails/trail_show_container';
 import NotFound from './404/not_found.jsx'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas)
+
 export default () => (
   <div>
 
