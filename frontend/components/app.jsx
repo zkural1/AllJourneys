@@ -6,13 +6,14 @@ import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import NavBarContainer from './nav/nav_bar_container';
 import ParkShowContainer from './parks/park_show_container'
 import HomeContainer from './home/home_container';
-import Footer from './nav/footer';
+import Footer from './footer/footer';
 import TrailShowContainer from './trails/trail_show_container';
 import NotFound from './404/not_found.jsx'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(fas)
+library.add(fas, fab)
 
 export default () => (
   <div>
@@ -26,6 +27,6 @@ export default () => (
     <Route path="/api/parks/:parkId" component = {ParkShowContainer} />
     <Route component={NotFound} />
     </Switch>
-    {/* <Route path="/" component={Footer}/> */}
+    <Route path="/" component={Footer}/>
   </div>
 );

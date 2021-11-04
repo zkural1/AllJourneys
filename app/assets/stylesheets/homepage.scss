@@ -1,17 +1,15 @@
+$base-green:rgb(67,137,19);
 .homepage {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.homepage-1 {
+#homepage-1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
-
-.homepage {
   height: 300px;
   width: 100%;
   background-image: url("homepage.png");
@@ -22,21 +20,38 @@
 .slogan-search {
   z-index: 1;
   font-size: 100;
-  position: absolute;
   text-align: center;
-  width: 100%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
-}
-#search-wrapper {
-  top: 325px;
-  background-color: white;
-  border-radius: 100%;
 }
 #slogan {
   z-index: 1;
   margin: 0;
   vertical-align: middle;
-  font-size: 100;
+  font-size: 36px;
+  font-weight: 600;
   color: white;
+  width: 100%;
+}
+#search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px 5px 20px;
+  background-color: white;
+  border-radius: 30px;
+  height: 4vh;
+}
+#search {
+    font-size: 12px;
+    margin-right: 5px;
+    color:rgb(100,100,100);
+}
+#searchbar{
+    border: 0px;
+    width: 95%;
+}
+#arrow {
+    color: $base-green;
 }

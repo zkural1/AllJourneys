@@ -1,14 +1,14 @@
-$base-green:rgb(67,137,19);
+$base-green: rgb(67, 137, 19);
 .nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 30px;
-  .explore{
+  .explore {
     width: 10vw;
   }
-  a{
-    color:#808080;
+  a {
+    color: #808080;
   }
 }
 
@@ -16,11 +16,11 @@ $base-green:rgb(67,137,19);
   font-size: 16px;
   font-weight: 500;
   display: flex;
-  align-items:center;
-  path{
-    color:$base-green;
+  align-items: center;
+  path {
+    color: $base-green;
   }
-  h1{
+  h1 {
     font-size: 20px;
     margin-left: 1vw;
   }
@@ -32,7 +32,7 @@ $base-green:rgb(67,137,19);
   align-items: center;
   border-radius: 8px;
   margin-left: 8px;
-  div{
+  div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,22 +47,39 @@ $base-green:rgb(67,137,19);
 }
 
 a {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
 
 .signup-btn {
   background-color: #219ad8;
-  a{
+  a {
     color: white;
   }
 }
 .signup-btn-txt {
-//   color: white;
+  //   color: white;
 }
 .login-btn {
-  a{
+  a {
     color: #219ad8;
   }
 }
 .login-btn-txt {
+}
+
+.footer {
+  background-color: rgb(242,242,242);
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  display: flex;
+  justify-content: space-around;
+  h1{
+    font-size: 28px;
+  }
+  a {
+    margin-left: 1vw;
+    font-size: 30px;
+    font-weight: 500;
+    color: #808080;
+  }
 }
