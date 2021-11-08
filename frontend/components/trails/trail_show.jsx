@@ -15,7 +15,6 @@ class TrailShow extends React.Component {
     render() {
         const trail = this.props.trail
         if (trail) {
-            debugger
             return (
             <div className="trail">
                 <h1>{trail.name}</h1>
