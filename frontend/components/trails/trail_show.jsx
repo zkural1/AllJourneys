@@ -14,14 +14,19 @@ class TrailShow extends React.Component {
 
     render() {
         const trail = this.props.trail
-        if (trail) {return (
+        if (trail) {
+            debugger
+            return (
             <div className="trail">
                 <h1>{trail.name}</h1>
+                <div className="photo-container">
+                    <img src={trail.photoUrl} alt="trail"/>
+                </div>
                 <p>Summary: {trail.summary}</p>
                 <p>Length: {trail.length}</p>
                 <p>Route Type: {trail.route_type}</p>
                 <div id='map_div'>
-                    <ParkMap location = {[trail.lng,trail.lat]} />
+                    <ParkMap location = {[trail.lng,trail.lat]} type="trail"/>
                 </div>
             </div>
         )}

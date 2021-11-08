@@ -23,8 +23,8 @@ export default () => (
     <Route exact path="/" component={HomeContainer}/>
     <AuthRoute path="/signup" component={SignupContainer} />
     <AuthRoute path="/login" component={LoginContainer} />
-    <Route path="/api/trails/:trailId" component={TrailShowContainer} />
-    <Route path="/api/parks/:parkId" component = {ParkShowContainer} />
+    <Route path="/trails/:trailId" component={TrailShowContainer} />
+    <Route path="/parks/:parkId" component = {ParkShowContainer} />
     <Route component={NotFound} />
     </Switch>
     <Route path="/" component={Footer}/>

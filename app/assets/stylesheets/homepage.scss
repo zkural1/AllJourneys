@@ -1,4 +1,6 @@
 $base-green:rgb(67,137,19);
+$base-gray: #808080;
+
 .homepage {
   display: flex;
   justify-content: space-between;
@@ -8,9 +10,9 @@ $base-green:rgb(67,137,19);
 #homepage-1 {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 600px;
   width: 100%;
   background-image: url("homepage.png");
   background-size: cover;
@@ -19,7 +21,7 @@ $base-green:rgb(67,137,19);
 
 .slogan-search {
   z-index: 1;
-  font-size: 100;
+  font-size: 10px;
   text-align: center;
   width: 50%;
   margin-left: auto;
@@ -27,31 +29,37 @@ $base-green:rgb(67,137,19);
 }
 #slogan {
   z-index: 1;
-  margin: 0;
+
   vertical-align: middle;
-  font-size: 36px;
-  font-weight: 600;
+  font-size: 70px;
+  font-weight: 550;
   color: white;
   width: 100%;
 }
 #search-wrapper {
+  margin-top: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px 20px 5px 20px;
   background-color: white;
-  border-radius: 30px;
-  height: 4vh;
+  border-radius: 40px;
+  height: 60px;
 }
 #search {
-    font-size: 12px;
+    font-size: 20px;
     margin-right: 5px;
-    color:rgb(100,100,100);
+    color:$base-gray;
 }
 #searchbar{
+  margin-left: 5px;
     border: 0px;
     width: 95%;
+    font-size: 18px;
+    outline: 0px;
+    color:$base-gray;
 }
 #arrow {
     color: $base-green;
+    font-size: 36px;
 }

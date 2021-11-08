@@ -23,7 +23,7 @@ class Home extends React.Component {
             <input
               className="search"
               type="text"
-              placeholder="Search by city,park, or trail name"
+              placeholder="Search by city, park, or trail name"
               id="searchbar"
             />
             <FontAwesomeIcon icon="arrow-circle-right" id="arrow"/>

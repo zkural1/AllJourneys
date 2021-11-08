@@ -14,9 +14,10 @@
  *= require_self
  */
 
- /* @import "./reset.scss";
+ @import "./reset.scss";
  @import "./map.scss";
 
  @import "./nav_bar.scss";
  @import "./homepage.scss";
- @import "./signup-login.scss"; */
+ @import "./signup-login.scss";
+ @import "./park.scss"

@@ -1,19 +1,21 @@
 $base-green: rgb(67, 137, 19);
+$base-gray: #808080;
 .nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30px;
+  height: 60px;
+  border-bottom: 2px solid rgb(242,242,242);
   .explore {
     width: 10vw;
   }
   a {
-    color: #808080;
+    color: $base-gray;
   }
 }
 
 .logo {
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -21,7 +23,7 @@ $base-green: rgb(67, 137, 19);
     color: $base-green;
   }
   h1 {
-    font-size: 20px;
+    font-size: 35px;
     margin-left: 1vw;
   }
 }
@@ -37,11 +39,11 @@ $base-green: rgb(67, 137, 19);
     justify-content: center;
     align-items: center;
     border: 2px solid #219ad8;
-    font-size: 8px;
+    font-size: 14px;
     font-weight: 600;
     margin: 5px;
-    width: 40px;
-    height: 20px;
+    width: 70px;
+    height: 40px;
     border-radius: 8px;
   }
 }
@@ -71,11 +73,11 @@ a {
   display: flex;
   justify-content: space-around;
   h1{
-    font-size: 28px;
+    font-size: 42px;
   }
   a {
     margin-left: 1vw;
-    font-size: 30px;
+    font-size: 45px;
     font-weight: 500;
     color: #808080;
   }

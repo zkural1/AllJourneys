@@ -10,11 +10,17 @@ mapbox.accessToken = ACCESS_TOKEN
 class ParkMap extends React.Component {
 
   componentDidMount() {
+    let zoom
+    if (this.props.type==="park"){
+      zoom=9
+    }else{
+      zoom=13.5
+    }
     this.map = new mapbox.Map({
       container: "map_div2", // container ID
       style: "mapbox://styles/mapbox/outdoors-v11", // style URL
       center: this.props.location, // starting position [lng, lat]
-      zoom: 13.5,
+      zoom: zoom,
     });
 
             
@@ -25,9 +31,6 @@ class ParkMap extends React.Component {
             new mapbox.Marker(el)
                 .setLngLat(this.props.location)
                 .addTo(this.map);
-    //   container: 'map_div',
-    //   style: 'mapbox://styles/mapbox/streets-v11',
-    //   center: this.location
   }
 
   render() {

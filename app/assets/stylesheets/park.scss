@@ -1,0 +1,233 @@
+$base-green: rgb(67, 137, 19);
+$base-gray: #808080;
+$font-color: rgb(119, 119, 119);
+.park-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.park-container {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+}
+#location-search-photos-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.location-and-search {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  #location {
+    display: flex;
+    p {
+      font-size: 12px;
+      margin-right: 5px;
+      color: $base-gray;
+    }
+  }
+  #upper-searchbar {
+    height: 35px;
+
+    input {
+      padding-left: 10px;
+      height: 90%;
+      width: 275px;
+      border-radius: 8px 0px 0px 8px;
+      border: 1px solid rgb(230, 230, 230);
+      color: $base-gray;
+    }
+    input:focus {
+      outline: 0px;
+    }
+    button {
+      height: 100%;
+      width: 40px;
+      border-radius: 0px 5px 5px 0px;
+      background-color: $base-green;
+      color: white;
+      border: 0px;
+    }
+  }
+}
+
+#park-photos-container {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  img {
+    border-radius: 10px;
+    height: auto;
+    margin: 10px 20px 10px 0px;
+    width: 32%;
+  }
+}
+
+#park-info-container {
+  width: 80%;
+  h2 {
+    font-size: 30px;
+    margin: 10px 0px 10px 0px;
+    font-weight: 500;
+  }
+  p {
+    margin: 5px 0px 20px 0px;
+    color: $font-color;
+    line-height: 1.5;
+  }
+  #map-div {
+    canvas {
+      border-radius: 10px;
+      height: 200px;
+    }
+  }
+  #map-options {
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    a {
+      display: flex;
+      align-items: center;
+      color: $base-green;
+    }
+    div {
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100px;
+      box-shadow: 0px 10px 13px -7px #626262, 0px -2px 13px -7px #626262;
+      height: 70px;
+      width: 70px;
+      font-size: 25px;
+      color: $base-green;
+    }
+  }
+}
+
+.park-information-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgb(210, 210, 210);
+  border-bottom: 1px solid rgb(210, 210, 210);
+  margin: 10px 0px 30px 0px;
+  h2 {
+    font-size: 25px;
+    margin: 20px 0px 10px 0px;
+    font-weight: 300;
+  }
+  h3 {
+    font-size: 20px;
+    margin: 20px 0px 10px 0px;
+  }
+  .acreage-contact-container {
+    display: flex;
+    justify-content: space-between;
+    p {
+      margin: 5px 0px 30px 0px;
+      color: $font-color;
+    }
+  }
+}
+
+#top-trails-container {
+  display: flex;
+  flex-direction: column;
+
+  #filters-container{
+      display: flex;
+      div{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+          width: auto;
+          padding: 0px 10px 0px 10px;
+          border: 1px solid rgb(210, 210, 210);
+          border-radius: 5px;
+          margin-right: 10px;
+          color: $base-gray;
+          font-size: 12px;
+        #angle-down-icon{
+            font-size: 12px;
+            margin-left: 3px;
+        }
+      }
+  }
+  #trails-count {
+    margin: 40px 0px 10px 0px;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(65,65,65);
+  }
+  #trail-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.trail {
+  display: flex;
+  margin: 10px 0px 20px 0px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 14px -1px rgba(0, 0, 0, 0.15);
+
+  .trail-photo {
+    height: 200px;
+    width: 350px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+
+  .trail-info {
+    margin: 10px 10px 10px 0px;
+    padding-left: 10px;
+    h3 {
+      color: rgb(65, 65, 65);
+      font-size: 18px;
+      font-weight: 600;
+      margin: 15px 0px 5px 0px;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgb(122, 122, 122);
+    }
+    .difficulty {
+      margin-top: 10px;
+      height: 20px;
+      width: 80px;
+      color: white;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: lighter;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #easy {
+      background-color: $base-green;
+    }
+    #moderate {
+      background-color: rgb(74, 175, 224);
+    }
+    #hard {
+      background-color: rgb(103, 103, 103);
+    }
+    #description {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 100;
+    }
+  }
+}

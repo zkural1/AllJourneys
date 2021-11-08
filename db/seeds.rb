@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+
 User.destroy_all
 Park.destroy_all
 Trail.destroy_all
@@ -22,18 +24,53 @@ park1 = Park.create!({
     contact: "760-367-5500",
     park_type: "National",
     lng: -115.91014083170826,
-    lat: 33.868311460195976
+    lat: 33.868311460195976,
+    country: "United States of America",
+    state: "California",
+    acreage:"789,745 acres"
 })
 
+trail1_file1=open('https://alljourneys-seeds.s3.amazonaws.com/trails/BarkerDam.jpeg')
 trail1 =Trail.create!({
     name: "Barker Dam Nature Trail",
     summary: "Barker Dam Nature Trail is a 1.3 mile heavily trafficked loop trail located near Joshua Tree, California that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking, walking, and nature trips and is accessible year-round.",
-    difficulty: "Easy",
+    difficulty: "easy",
     length: 1.3,
     route_type: "Loop",
     park_id: park1.id,
     lng: -116.1421382455961, 
     lat: 34.02517056446297, 
     elevation_gain: 62,
-    time: '1.5',
+    time: '1 h 30 m',
 })
+trail1.photo.attach(io: trail1_file1, filename: 'BarkerDam.jpeg')
+
+trail2_file1=open('https://alljourneys-seeds.s3.amazonaws.com/trails/RyanMountain.jpeg')
+trail2 = Trail.create!({
+    name: "Ryan Mountain Trail",
+    summary: "Ryan Mountain Trail is a 3 mile heavily trafficked out and back trail located near Twentynine Palms, California that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking and running and is accessible year-round.",
+    difficulty: "moderate",
+    length: 3.0,
+    route_type: "Out & back",
+    park_id: park1.id,
+    lng: -116.13493817265655,
+    lat: 33.99440319023542, 
+    elevation_gain: 1069,
+    time: '1 h 30 m',
+})
+trail2.photo.attach(io: trail2_file1, filename: 'RyanMountain.jpeg')
+
+trail3_file1=open('https://alljourneys-seeds.s3.amazonaws.com/trails/ArchRock.jpeg')
+trail3 = Trail.create!({
+    name: "Arch Rock Nature Trail",
+    summary: "Arch Rock Nature Trail is a 1.2 mile heavily trafficked out and back trail located near Twentynine Palms, California that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking and walking and is accessible year-round.",
+    difficulty: "easy",
+    length: 1.2,
+    route_type: "Out & back",
+    park_id: park1.id,
+    lng: -116.02297214381016,
+    lat: 33.98942628491143, 
+    elevation_gain: 88,
+    time: '1 h 30 m',
+})
+trail3.photo.attach(io: trail3_file1, filename: 'ArchRock.jpeg')
