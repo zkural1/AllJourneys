@@ -4,7 +4,8 @@ import { fetchTrail } from "../../actions/trail";
 
 const mSTP = (state, ownProps) => {
     return {
-        trail: state.entities.trails[ownProps.match.params.trailId],
+        trails: state.entities.trails.trails,
+        park: state.entities.trails.park,
     }
 }
 

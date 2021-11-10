@@ -1,4 +1,4 @@
-$base-green:rgb(67,137,19);
+$base-green: rgb(67, 137, 19);
 $base-gray: #808080;
 
 .homepage {
@@ -12,6 +12,7 @@ $base-gray: #808080;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   height: 600px;
   width: 100%;
   background-image: url("homepage.png");
@@ -20,10 +21,11 @@ $base-gray: #808080;
 }
 
 .slogan-search {
+  position: relative;
   z-index: 1;
   font-size: 10px;
   text-align: center;
-  width: 50%;
+  width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -37,7 +39,7 @@ $base-gray: #808080;
   width: 100%;
 }
 #search-wrapper {
-  margin-top: 3vh;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,21 +47,82 @@ $base-gray: #808080;
   background-color: white;
   border-radius: 40px;
   height: 60px;
+  box-shadow: 0px 2px 14px -1px rgba(0, 0, 0, 0.15);
 }
 #search {
-    font-size: 20px;
-    margin-right: 5px;
-    color:$base-gray;
+  font-size: 20px;
+  margin-right: 5px;
+  color: $base-gray;
 }
-#searchbar{
+#searchbar {
   margin-left: 5px;
-    border: 0px;
-    width: 95%;
-    font-size: 18px;
-    outline: 0px;
-    color:$base-gray;
+  border: 0px;
+  width: 95%;
+  font-size: 18px;
+  outline: 0px;
+  color: $base-gray;
 }
 #arrow {
-    color: $base-green;
-    font-size: 36px;
+  color: $base-green;
+  font-size: 36px;
+}
+.search-results {
+  position: absolute;
+  top:375px;
+  width: 700px;
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+  margin-top: -30px;
+  padding-top: 30px;
+  box-shadow: 0px 2px 14px -1px rgba(0, 0, 0, 0.15);
+  :focus {
+  visibility: visible;
+}
+}
+.search-result-item {
+  a {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    color: $base-gray;
+    margin: 10px 0px 10px 0px;
+    padding: 10px 0px 10px 0px;
+    .icon {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      background-color: rgb(242, 242, 242);
+      margin: 20px 0px 20px 10px;
+      font-size: 20px;
+      svg {
+        color: $base-green;
+      }
+    }
+    .search-info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+    }
+    .search-name {
+      color: rgb(65,65,65);
+      font-size: 18px;
+    }
+    .search-detail {
+      margin-top: 5px;
+      font-size: 12px;
+    }
+  }
+  a:hover {
+    background-color: rgb(242, 242, 242);
+    .icon {
+      background-color: white;
+    }
+  }
+}
+#no-results{
+  margin: 25px 0px 15px 10px;
+  font-size: 20px;
 }

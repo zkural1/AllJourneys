@@ -1,0 +1,210 @@
+$base-green: rgb(67, 137, 19);
+$base-gray: #808080;
+.trail-page {
+  background-color: rgb(242, 242, 242);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  color: rgb(242, 242, 242);
+}
+
+.trail-container {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+}
+
+#trail-photo-container {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin-top: 10px;
+  #darkener {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  }
+  #trail-title {
+    position: absolute;
+    top: 195px;
+    left: 20px;
+    height: 100px;
+    width: 100%;
+
+    h2 {
+      font-size: 25px;
+      font-weight: 600;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  }
+}
+#menu-buttons {
+  background-color: $base-green;
+  top: 300px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: $base-green;
+  }
+  div {
+    overflow: visible;
+    background-color: white;
+    position: absolute;
+    top: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    box-shadow: 0px 10px 13px -7px #626262, 0px -2px 13px -7px #626262;
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    color: $base-green;
+  }
+  p {
+    position: absolute;
+    top: 5px;
+    color: white;
+  }
+}
+
+#info-container {
+  background-color: white;
+  border: 1px solid rgb(204, 204, 204);
+  display: flex;
+  justify-content: space-between;
+  color: $base-gray;
+  height: fit-content;
+  #info {
+    width: auto;
+    border: 1px solid rgb(204, 204, 204);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #summary {
+      margin: 20px 20px 0px 20px;
+      font-size: 16px;
+      p {
+        border-bottom: 1px solid rgb(204, 204, 204);
+        padding-bottom: 20px;
+        line-height: 1.5;
+      }
+    }
+    #trail-data-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 70%;
+      margin: 30px 160px 30px 10px;
+      .trail-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h3 {
+          font-size: 10px;
+          margin-bottom: 5px;
+        }
+        p {
+          font-size: 18px;
+          color: rgb(65, 65, 65);
+          font-weight: 600;
+        }
+      }
+    }
+    #tag-container {
+      display: flex;
+      width: 90%;
+      flex-wrap: wrap;
+      margin: 0px 0px 20px 0px;
+      .tag {
+        border: 1px solid $base-green;
+        border-radius: 10px;
+        padding: 8px 16px 8px 16px;
+        margin: 3px;
+        color: $base-green;
+        width: auto;
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  #map-other-trails-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #map-div {
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid rgb(204, 204, 204);
+    #map-container {
+      width: 300px;
+      height: 200px;
+    }
+  }
+  #other-trails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 10px 10px 10px;
+    height: 100%;
+    width: 300px;
+    h2 {
+      align-self: flex-start;
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgb(65, 65, 65);
+      margin-bottom: 10px;
+    }
+    img {
+      height: 125px;
+      width: 275px;
+      object-fit: cover;
+      border-radius: 10px 10px 0px 0px;
+    }
+    .nearby-trail-info{
+      border-radius: 0px 0px 10px 10px;
+      box-shadow: 0px 2px 14px -1px rgba(0, 0, 0, 0.15);
+      margin: -1px 10px 10px 0px;
+      padding-left: 10px;
+      width: 265px;
+      height: 110px;
+      h3 {
+        color: rgb(65, 65, 65);
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0px 0px 5px 0px;
+        padding-top: 5px;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 12px;
+        color: rgb(122, 122, 122);
+      }
+    }
+  }
+}

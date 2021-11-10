@@ -17,24 +17,23 @@ class ParkMap extends React.Component {
       zoom=13.5
     }
     this.map = new mapbox.Map({
-      container: "map_div2", // container ID
+      container: "map-container", // container ID
       style: "mapbox://styles/mapbox/outdoors-v11", // style URL
       center: this.props.location, // starting position [lng, lat]
       zoom: zoom,
     });
 
-            
     const el = document.createElement('div');
             el.className = 'marker';
             
             // make a marker for each feature and add to the map
-            new mapbox.Marker(el)
-                .setLngLat(this.props.location)
-                .addTo(this.map);
+    new mapbox.Marker(el)
+        .setLngLat(this.props.location)
+        .addTo(this.map);
   }
 
   render() {
-    return <div id="map_div2"></div>;
+    return <div id="map-container"></div>;
   }
 }
 

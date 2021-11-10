@@ -48,7 +48,7 @@ class ParkShow extends React.Component {
           </div>
           <div id="map-options">
             <a href="https://www.google.com/maps/dir/Current+Location/33.79,-115.9"><div id="directions-icon-wrapper"><FontAwesomeIcon icon="route" id="directions-icon" /></div>Directions</a>
-            <a><div id="directions-icon-wrapper"><FontAwesomeIcon icon="print" id="print-icon" /></div>Print map</a>
+            <a><div id="directions-icon-wrapper"><FontAwesomeIcon icon="print" id="print-icon" /></div>Print</a>
             <a><div id="directions-icon-wrapper"><FontAwesomeIcon icon="share" id="share-icon" /></div>Share</a>
           </div>
         </div>

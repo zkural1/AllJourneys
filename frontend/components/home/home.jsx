@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SearchBarContainer from "../search/search_container";
 class Home extends React.Component {
   render() {
     const slogan = this.props.currentUser ? (
@@ -18,7 +19,8 @@ class Home extends React.Component {
         <div id="homepage-1">
           <div></div>
           {slogan}
-          <div className="slogan-search" id="search-wrapper">
+          <SearchBarContainer/>
+          {/* <div className="slogan-search" id="search-wrapper">
             <FontAwesomeIcon icon="search" id="search"/>
             <input
               className="search"
@@ -27,7 +29,7 @@ class Home extends React.Component {
               id="searchbar"
             />
             <FontAwesomeIcon icon="arrow-circle-right" id="arrow"/>
-          </div>
+          </div> */}
         </div>
       </div>
     );

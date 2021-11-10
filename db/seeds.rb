@@ -42,6 +42,7 @@ trail1 =Trail.create!({
     lat: 34.02517056446297, 
     elevation_gain: 62,
     time: '1 h 30 m',
+    tags: ["Kid friendly", "Hiking", "Nature trips", "Walking", "Views", "Wildflowers", "Wildlife", "Rocky", "No shade", "Historic site", "Fee", "No dogs"]
 })
 trail1.photo.attach(io: trail1_file1, filename: 'BarkerDam.jpeg')
 
