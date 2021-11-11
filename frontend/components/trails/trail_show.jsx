@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ParkMap from "../map/park_map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReviewIndex from "../reviews/review_index";
 
 class TrailShow extends React.Component {
   constructor(props) {
@@ -13,9 +14,9 @@ class TrailShow extends React.Component {
   }
 
   render() {
-    if (this.props.trails) {
-      const trails = this.props.trails;
-      const trail = this.props.trails[this.props.match.params.trailId];
+    if (this.props.currentTrail) {
+      const trails = this.props.otherTrails;
+      const trail = this.props.currentTrail;
       const park = this.props.park;
       return (
         <div className="trail-page">
@@ -100,26 +101,36 @@ class TrailShow extends React.Component {
                         </div>
                       ))}
                     </div>
+                    <div id="reviews-container">
+                      <div id="review-header">
+                        <p>Reviews</p>
+                      </div>
+                      <ReviewIndex reviews={trail.reviews} />
+                    </div>
                   </div>
                   <div id="map-other-trails-container">
                     <div id="map-div">
-                      <ParkMap location={[trail.lng, trail.lat]} type="trail" />
+                      <ParkMap location={[trail.lng, trail.lat]} type="trail"/>
                     </div>
                     <div id="other-trails">
                       <h2>Nearby trails</h2>
                       {Object.values(trails).map((trail) => (
-                        <div key={trail.id} className="neaby-trail-container">
-                          <img src={trail.photoUrl}
-                            className="nearby-trail-photo"/>
-                          <div className="nearby-trail-info">
-                            <h3>{trail.name}</h3>
-                            <p id="park">{park.name}</p>
-                            <div id={trail.difficulty} className="difficulty">
-                              {trail.difficulty}
+                        <Link to={`/trails/${trail.id}`} key={trail.id}>
+                          <div className="neaby-trail-container">
+                            <img
+                              src={trail.photoUrl}
+                              className="nearby-trail-photo"
+                            />
+                            <div className="nearby-trail-info">
+                              <h3>{trail.name}</h3>
+                              <p id="park">{park.name}</p>
+                              <div id={trail.difficulty} className="difficulty">
+                                {trail.difficulty}
+                              </div>
+                              <p id="length-time">{`Length: ${trail.length} mi · Est. ${trail.time}`}</p>
                             </div>
-                            <p id="length-time">{`Length: ${trail.length} mi · Est. ${trail.time}`}</p>
                           </div>
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   </div>

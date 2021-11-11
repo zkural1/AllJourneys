@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_09_024210) do
+ActiveRecord::Schema.define(version: 2021_11_10_162002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 2021_11_09_024210) do
     t.integer "trail_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tags", default: [], array: true
+    t.string "activity_type", null: false
     t.index ["trail_id"], name: "index_reviews_on_trail_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

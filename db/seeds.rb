@@ -10,14 +10,15 @@ require 'open-uri'
 User.destroy_all
 Park.destroy_all
 Trail.destroy_all
-
-User.create!([{
+Review.destroy_all
+default_profile_picture = open("https://alljourneys-seeds.s3.amazonaws.com/defaultProfilePicture.png")
+demo_user = User.create!({
     firstname: "Demo",
     lastname: "User",
     email: "demo@alljourneys.com",
     password: "demouser123"
-}])
-
+})
+demo_user.photo.attach(io: default_profile_picture, filename: 'DefaultProfilePicture.jpeg')
 park1 = Park.create!({
     name: "Joshua Tree National Park",
     description: "Joshua Tree Wilderness was established in 1976 by The United States Congress and was later expanded by the California Desert Protection Act of 1994. Today the park  is managed by the National Parks Service and covers a total of 594,502 acres of  California desert   The park extended north into the Pinto Mountains, northeast into the Coxcomb Mountains, southeast into the Eagle Mountains, and southwest into the Little San Bernardino Mountains.",
@@ -58,8 +59,10 @@ trail2 = Trail.create!({
     lat: 33.99440319023542, 
     elevation_gain: 1069,
     time: '1 h 30 m',
+    tags: ["Hiking", "Running","Views", "Wildflowers", "Wildlife", "Rocky", "No shade", "Fee", "No dogs"]
 })
 trail2.photo.attach(io: trail2_file1, filename: 'RyanMountain.jpeg')
+trail2_review1 = Review.create(rating: 5, date: "2021-10-25", review_text: "I had such an amazing time!", activity_date: "2021-10-23", activity_type: "Hiking", user_id: demo_user.id, trail_id: trail2.id)
 
 trail3_file1=open('https://alljourneys-seeds.s3.amazonaws.com/trails/ArchRock.jpeg')
 trail3 = Trail.create!({

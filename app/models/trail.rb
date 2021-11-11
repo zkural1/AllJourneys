@@ -6,5 +6,5 @@ class Trail < ApplicationRecord
 
     belongs_to :park
     has_one_attached :photo
-    
+    has_many :reviews
 end

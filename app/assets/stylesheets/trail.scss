@@ -1,5 +1,6 @@
 $base-green: rgb(67, 137, 19);
 $base-gray: #808080;
+$text-color: rgb(65, 65, 65);
 .trail-page {
   background-color: rgb(242, 242, 242);
   width: 100%;
@@ -124,7 +125,7 @@ $base-gray: #808080;
         }
         p {
           font-size: 18px;
-          color: rgb(65, 65, 65);
+          color: $text-color;
           font-weight: 600;
         }
       }

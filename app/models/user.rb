@@ -6,16 +6,12 @@ class User < ApplicationRecord
     validates :password, presence: true, length: {minimum: 6}, allow_nil: true 
     
     before_validation :ensure_session_token
-
+    has_one_attached :photo
     has_many :reviews,
         primary_key: :id,
         foreign_key: :user_id,
         class_name: :Review
 
-    has_many :photos,
-        primary_key: :id,
-        foreign_key: :user_id,
-        class_name: :Photo
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

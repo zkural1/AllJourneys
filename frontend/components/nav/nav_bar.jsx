@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default ({ currentUser, logout }) => {
 const display = currentUser ? (
-    <div>
-      <h3>Welcome {currentUser.email}!</h3>
-      <button onClick={logout}>Logout</button>
+    <div id="logged-in-right-container">
+      <div id="profile-picture" style={{ backgroundImage: `url(${currentUser.photoUrl})` }}/>
+      <div id="user-options-container">
+      <div onClick={logout}>Logout</div>
+      </div>
     </div>
   ) : (
     <div className="login-sign">
