@@ -51,7 +51,7 @@ trail1 =Trail.create!({
     lng: -116.1421382455961, 
     lat: 34.02517056446297, 
     elevation_gain: 62,
-    time: '1 h 30 m',
+    time: '34 m',
     tags: ["Kid friendly", "Hiking", "Nature trips", "Walking", "Views", "Wildflowers", "Wildlife", "Rocky", "No shade", "Historic site", "Fee", "No dogs"]
 })
 trail1.photo.attach(io: trail1_file1, filename: 'BarkerDam.jpeg')
@@ -69,7 +69,7 @@ trail2 = Trail.create!({
     lng: -116.13493817265655,
     lat: 33.99440319023542, 
     elevation_gain: 1069,
-    time: '1 h 30 m',
+    time: '1 h 56 m',
     tags: ["Hiking", "Running","Views", "Wildflowers", "Wildlife", "Rocky", "No shade", "Fee", "No dogs"]
 })
 trail2.photo.attach(io: trail2_file1, filename: 'RyanMountain.jpeg')
@@ -87,7 +87,7 @@ trail3 = Trail.create!({
     lng: -116.02297214381016,
     lat: 33.98942628491143, 
     elevation_gain: 88,
-    time: '1 h 30 m',
+    time: '33 m',
 })
 trail3.photo.attach(io: trail3_file1, filename: 'ArchRock.jpeg')
 trail3_review1 = Review.create(rating: 5, date: "2021-10-25", review_text: "I think this has to be the most traveled trail in the park.", activity_date: "2021-10-23", activity_type: "Hiking", user_id: demo_user.id, trail_id: trail3.id)
