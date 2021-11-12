@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ParkMap from "../map/park_map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {FacebookShareButton} from "react-share";
+import SearchBarContainer from "../search/search_container";
 
 class ParkShow extends React.Component {
   constructor(props) {
@@ -26,15 +27,7 @@ class ParkShow extends React.Component {
               <p>›</p>
               <p>{park.name}</p>
             </div>
-            <div id="upper-searchbar">
-              <input
-                type="text"
-                placeholder="Enter a city, park, or trail name"
-              />
-              <button>
-                <FontAwesomeIcon icon="search" id="upper-search-icon" />
-              </button>
-            </div>
+            <SearchBarContainer type="show-page"/>
           </div>
           <div id="park-photos-container">
             <img

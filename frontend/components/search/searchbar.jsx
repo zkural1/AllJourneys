@@ -7,7 +7,6 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       query: "",
-      focus: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,11 +22,17 @@ class SearchBar extends React.Component {
   }
 
   handleFocus() {
-    this.setState({ focus: true });
+    const list = document.getElementById("search-results");
+    if (list) {
+      list.style.visibility = "visible";
+    }
   }
 
   handleBlur() {
-    this.setState({ focus: false });
+    const list = document.getElementById("search-results");
+    if (list) {
+      list.style.visibility = "hidden";
+    }
   }
 
   handleSubmit(e) {
@@ -41,15 +46,10 @@ class SearchBar extends React.Component {
     if (this.props.type === "home-page") {
       return (
         <>
-          <div
-            className="slogan-search"
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-          >
+          <div className="slogan-search">
             <form
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
-              onSubmit={this.handleSubmit}
               className="search-input"
               id="search-wrapper"
             >
@@ -80,8 +80,8 @@ class SearchBar extends React.Component {
           <div id="upper-searchbar">
             <form
               onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
               onSubmit={this.handleSubmit}
+              onBlur={this.handleBlur}
               className="search-input"
             >
               <input

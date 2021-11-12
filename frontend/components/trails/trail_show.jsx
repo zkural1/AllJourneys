@@ -29,7 +29,6 @@ class TrailShow extends React.Component {
       const trail = this.props.currentTrail;
       const park = this.props.park;
       const url = window.location.href
-      debugger
       return (
         <div className="trail-page">
           <div className="trail-container">

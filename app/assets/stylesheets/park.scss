@@ -63,7 +63,7 @@ $font-color: rgb(119, 119, 119);
 #show-search-container {
   position: relative;
   z-index: 4;
-  .search-results {
+  #search-results {
     position: absolute;
     top: 60px;
     width: 100%;
