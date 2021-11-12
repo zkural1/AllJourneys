@@ -88,6 +88,7 @@ trail3 = Trail.create!({
     lat: 33.98942628491143, 
     elevation_gain: 88,
     time: '33 m',
+    tags: ["Kid friendly", "Hiking", "Walking", "Views", "Wildflowers", "Wildlife", "No shade", "Fee", "No dogs"]
 })
 trail3.photo.attach(io: trail3_file1, filename: 'ArchRock.jpeg')
 trail3_review1 = Review.create(rating: 5, date: "2021-10-25", review_text: "I think this has to be the most traveled trail in the park.", activity_date: "2021-10-23", activity_type: "Hiking", user_id: demo_user.id, trail_id: trail3.id)
