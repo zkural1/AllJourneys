@@ -56,16 +56,21 @@ $base-gray: #808080;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  div {
+  .tag {
     display: inline;
     width: fit-content;
-    padding: 5px 10px;
+    padding: 3px 10px;
     border: 1px solid $base-green;
+    margin-right: 8px;
     border-radius: 5px;
     color: $base-green;
     font-size: 12px;
+    
   }
   p {
     margin: 20px 0px 20px 0px;
+    color:rgb(65,65,65);
+    font-size: 14px;
+    line-height: 1.5;
   }
 }

@@ -38,39 +38,73 @@ class SearchBar extends React.Component {
 
   render() {
     const { results } = this.props;
-
-    return (
-      <>
-        <div
-          className="slogan-search"
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-        >
-          <form
-            onSubmit={this.handleSubmit}
-            className="search-input"
-            id="search-wrapper"
+    if (this.props.type === "home-page") {
+      return (
+        <>
+          <div
+            className="slogan-search"
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
           >
-            <FontAwesomeIcon icon="search" id="search" />
+            <form
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+              onSubmit={this.handleSubmit}
+              className="search-input"
+              id="search-wrapper"
+            >
+              <FontAwesomeIcon icon="search" id="search" />
 
-            <input
-              type="text"
-              placeholder="Search by park or trail name"
-              onChange={this.update()}
-              id="searchbar"
+              <input
+                type="text"
+                placeholder="Search by park or trail name"
+                onChange={this.update()}
+                id="searchbar"
+              />
+              <FontAwesomeIcon icon="arrow-circle-right" id="arrow" />
+            </form>
+          </div>
+          {this.state.query !== "" ? (
+            <SearchResults
+              results={results}
+              query={this.state.query}
+              fetchSearchResults={this.props.fetchSearchResults}
+              type="home-page"
             />
-            <FontAwesomeIcon icon="arrow-circle-right" id="arrow" />
-          </form>
+          ) : null}
+        </>
+      );
+    } else {
+      return (
+        <div id="show-search-container">
+          <div id="upper-searchbar">
+            <form
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+              onSubmit={this.handleSubmit}
+              className="search-input"
+            >
+              <input
+                type="text"
+                placeholder="Search by park or trail name"
+                onChange={this.update()}
+              />
+              <button>
+                <FontAwesomeIcon icon="search" id="upper-search-icon" />
+              </button>
+            </form>
+          </div>
+          {this.state.query !== "" ? (
+            <SearchResults
+              results={results}
+              query={this.state.query}
+              fetchSearchResults={this.props.fetchSearchResults}
+              type="show-page"
+            />
+          ) : null}
         </div>
-        {this.state.query !== "" ? (
-          <SearchResults
-            results={results}
-            query={this.state.query}
-            fetchSearchResults={this.props.fetchSearchResults}
-          />
-        ) : null}
-      </>
-    );
+      );
+    }
   }
 }
 

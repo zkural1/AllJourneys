@@ -1,5 +1,5 @@
 import React from "react";
-import ReactStars from "react-stars";
+import ReactStars from "react-rating-stars-component";
 
 class ReviewIndex extends React.Component {
   constructor(props) {
@@ -30,12 +30,14 @@ class ReviewIndex extends React.Component {
               </div>
             </div>
             <div id="tag-text-container">
-              <div>{review.activity_type}</div>
+              <div id="review-tag-container">
+              <div className="tag">{review.activity_type}</div>
               {review.tags.map((tag, idx) => (
                 <div key={idx} className="tag">
                   {tag}
                 </div>
               ))}
+              </div>
               <p>{review.review_text}</p>
             </div>
           </div>

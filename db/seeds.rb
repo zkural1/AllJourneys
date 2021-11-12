@@ -19,12 +19,21 @@ demo_user = User.create!({
     password: "demouser123"
 })
 demo_user.photo.attach(io: default_profile_picture, filename: 'DefaultProfilePicture.jpeg')
+user1 = User.create!({
+    firstname: "Trevor",
+    lastname: "Noah",
+    email: "test1@alljourneys.com",
+    password: "testuser123"
+})
+default_profile_picture1 = open("https://alljourneys-seeds.s3.amazonaws.com/defaultProfilePicture.png")
+user1.photo.attach(io: default_profile_picture1, filename: 'DefaultProfilePicture1.jpeg')
+
 park1 = Park.create!({
     name: "Joshua Tree National Park",
     description: "Joshua Tree Wilderness was established in 1976 by The United States Congress and was later expanded by the California Desert Protection Act of 1994. Today the park  is managed by the National Parks Service and covers a total of 594,502 acres of  California desert   The park extended north into the Pinto Mountains, northeast into the Coxcomb Mountains, southeast into the Eagle Mountains, and southwest into the Little San Bernardino Mountains.",
     contact: "760-367-5500",
     park_type: "National",
-    lng: -115.91014083170826,
+    lng: -116.01014083170826,
     lat: 33.868311460195976,
     country: "United States of America",
     state: "California",
@@ -46,6 +55,8 @@ trail1 =Trail.create!({
     tags: ["Kid friendly", "Hiking", "Nature trips", "Walking", "Views", "Wildflowers", "Wildlife", "Rocky", "No shade", "Historic site", "Fee", "No dogs"]
 })
 trail1.photo.attach(io: trail1_file1, filename: 'BarkerDam.jpeg')
+trail1_review1 = Review.create(rating: 5, date: "2021-10-25", review_text: "Well marked trail with a quick and intense elevation gain. Pack water and wear sun protection. Great view at the top!", activity_date: "2021-10-14", activity_type: "Camping", tags: ["No shade", "Off trail", "Rocky"],user_id: user1.id, trail_id: trail1.id)
+trail1_review2 = Review.create(rating: 4, date: "2021-10-25", review_text: "Great workout if you are looking to climb a lot of stairs. The whole trail is stairs - steady climb but not super steep. Gorgeous view from the top - hard to distinguish the Joshua Trees - offers a different view of the National Park. Very windy so hold onto your hats!", activity_date: "2021-10-23", activity_type: "Hiking", user_id: demo_user.id, trail_id: trail1.id)
 
 trail2_file1=open('https://alljourneys-seeds.s3.amazonaws.com/trails/RyanMountain.jpeg')
 trail2 = Trail.create!({
@@ -62,7 +73,8 @@ trail2 = Trail.create!({
     tags: ["Hiking", "Running","Views", "Wildflowers", "Wildlife", "Rocky", "No shade", "Fee", "No dogs"]
 })
 trail2.photo.attach(io: trail2_file1, filename: 'RyanMountain.jpeg')
-trail2_review1 = Review.create(rating: 5, date: "2021-10-25", review_text: "I had such an amazing time!", activity_date: "2021-10-23", activity_type: "Hiking", user_id: demo_user.id, trail_id: trail2.id)
+trail2_review1 = Review.create(rating: 5, date: "2021-10-25", review_text: "I had such an amazing time!", activity_date: "2021-10-23", activity_type: "Walking", user_id: demo_user.id, trail_id: trail2.id)
+trail2_review2 = Review.create(rating: 4, date: "2021-10-25", review_text: "Great views from the top. Worth the steps up. Cold and windy at the top, otherwise weather perfect. Only downside, it was very crowded.", activity_date: "2021-10-14", activity_type: "Hiking", tags: ["No shade", "Bugs", "Scramble"],user_id: user1.id, trail_id: trail2.id)
 
 trail3_file1=open('https://alljourneys-seeds.s3.amazonaws.com/trails/ArchRock.jpeg')
 trail3 = Trail.create!({
@@ -78,3 +90,5 @@ trail3 = Trail.create!({
     time: '1 h 30 m',
 })
 trail3.photo.attach(io: trail3_file1, filename: 'ArchRock.jpeg')
+trail3_review1 = Review.create(rating: 5, date: "2021-10-25", review_text: "I think this has to be the most traveled trail in the park.", activity_date: "2021-10-23", activity_type: "Hiking", user_id: demo_user.id, trail_id: trail3.id)
+trail3_review2 = Review.create(rating: 4, date: "2021-10-25", review_text: "Easy and quick trip to an unusual arch shaped rock. Well marked and maintained.", activity_date: "2021-10-14", activity_type: "Walking", tags: ["No shade"],user_id: user1.id, trail_id: trail3.id)

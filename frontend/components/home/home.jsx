@@ -17,8 +17,10 @@ class Home extends React.Component {
       <div className="homepage">
         <div id="homepage-1">
           <div></div>
-          {slogan}
-          <SearchBarContainer />
+            {slogan}
+          <div>
+            <SearchBarContainer type="home-page"/>
+          </div>
         </div>
       </div>
     );

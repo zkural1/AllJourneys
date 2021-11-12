@@ -35,6 +35,10 @@ $font-color: rgb(119, 119, 119);
   #upper-searchbar {
     height: 35px;
 
+    form {
+      margin: 0px;
+      height: 90%;
+    }
     input {
       padding-left: 10px;
       height: 90%;
@@ -56,7 +60,88 @@ $font-color: rgb(119, 119, 119);
     }
   }
 }
+#show-search-container {
+  position: relative;
+  z-index: 4;
+  .search-results {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background-color: white;
+    padding-top: 5px;
+    margin-top: -30px;
+    z-index: 3;
 
+    :focus {
+      visibility: visible;
+    }
+
+    .upper-search-result-item {
+      a {
+        display: flex;
+        .icon {
+          height: 30px;
+          width: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          background-color: rgb(242, 242, 242);
+          margin: 5px 0px 5px 10px;
+          font-size: 16px;
+        }
+        #trail-icon {
+          background-color: $base-green;
+          svg {
+            color: white;
+          }
+        }
+        #park-icon {
+          background-color: rgb(244, 155, 48);
+          svg {
+            color: white;
+          }
+        }
+
+        .search-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-left: 10px;
+        }
+        .search-name {
+          color: rgb(65, 65, 65);
+          font-size: 14px;
+        }
+        .search-detail {
+          color: $base-gray;
+          margin-top: 3px;
+          font-size: 8px;
+        }
+      }
+      a:hover {
+        background-color: $base-green;
+        #trail-icon {
+          background-color: white;
+          svg {
+            color: $base-green;
+          }
+        }
+        #park-icon {
+          background-color: white;
+          svg {
+            color: rgb(244, 155, 48);
+          }
+        }
+        .search-info {
+          p {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
 #park-photos-container {
   height: 250px;
   width: 100%;
@@ -83,6 +168,10 @@ $font-color: rgb(119, 119, 119);
     line-height: 1.5;
   }
   #map-div {
+    height: 200px;
+    #map-container{
+      height: 200px;
+    }
     canvas {
       border-radius: 10px;
       height: 200px;
@@ -143,31 +232,31 @@ $font-color: rgb(119, 119, 119);
   display: flex;
   flex-direction: column;
 
-  #filters-container{
+  #filters-container {
+    display: flex;
+    div {
       display: flex;
-      div{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 30px;
-          width: auto;
-          padding: 0px 10px 0px 10px;
-          border: 1px solid rgb(210, 210, 210);
-          border-radius: 5px;
-          margin-right: 10px;
-          color: $base-gray;
-          font-size: 12px;
-        #angle-down-icon{
-            font-size: 12px;
-            margin-left: 3px;
-        }
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: auto;
+      padding: 0px 10px 0px 10px;
+      border: 1px solid rgb(210, 210, 210);
+      border-radius: 5px;
+      margin-right: 10px;
+      color: $base-gray;
+      font-size: 12px;
+      #angle-down-icon {
+        font-size: 12px;
+        margin-left: 3px;
       }
+    }
   }
   #trails-count {
     margin: 40px 0px 10px 0px;
     font-size: 25px;
     font-weight: 600;
-    color: rgb(65,65,65);
+    color: rgb(65, 65, 65);
   }
   #trail-container {
     display: flex;
@@ -202,33 +291,39 @@ $font-color: rgb(119, 119, 119);
       font-size: 12px;
       color: rgb(122, 122, 122);
     }
-    
+
     #description {
-      margin-top: 20px;
-      font-size: 16px;
+      margin-top: 30px;
+      font-size: 14px;
       line-height: 1.5;
       font-weight: 100;
     }
   }
 }
 .difficulty {
-      margin-top: 10px;
-      height: 20px;
-      width: 80px;
-      color: white;
-      border-radius: 5px;
-      font-size: 12px;
-      font-weight: lighter;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #easy {
-      background-color: $base-green;
-    }
-    #moderate {
-      background-color: rgb(74, 175, 224);
-    }
-    #hard {
-      background-color: rgb(103, 103, 103);
-    }
+  margin-top: 10px;
+  height: 20px;
+  width: 80px;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#easy {
+  background-color: $base-green;
+}
+#moderate {
+  background-color: rgb(74, 175, 224);
+}
+#hard {
+  background-color: rgb(103, 103, 103);
+}
+.print-button:hover{
+  cursor: pointer;
+}
+#park-name:hover{
+  text-decoration: underline;
+}

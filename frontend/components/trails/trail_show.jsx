@@ -3,12 +3,22 @@ import { Link } from "react-router-dom";
 import ParkMap from "../map/park_map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReviewIndex from "../reviews/review_index";
-
+import SearchBarContainer from "../search/search_container";
+import {FacebookShareButton} from "react-share";
 class TrailShow extends React.Component {
   constructor(props) {
     super(props);
+    this.switchReviewForm = this.switchReviewForm.bind(this)
   }
 
+  switchReviewForm() {
+        this.setState({reviewForm: !this.state.reviewForm})
+    }
+  componentDidUpdate(prevProps, prevState) {
+    if(this.props.location.pathname!==prevProps.location.pathname){
+      this.props.fetchTrail(this.props.match.params.trailId)
+    }
+}
   componentDidMount() {
     this.props.fetchTrail(this.props.match.params.trailId);
   }
@@ -18,6 +28,8 @@ class TrailShow extends React.Component {
       const trails = this.props.otherTrails;
       const trail = this.props.currentTrail;
       const park = this.props.park;
+      const url = window.location.href
+      debugger
       return (
         <div className="trail-page">
           <div className="trail-container">
@@ -28,17 +40,9 @@ class TrailShow extends React.Component {
                   <p>›</p>
                   <p>{park.state}</p>
                   <p>›</p>
-                  <p>{park.name}</p>
+                  <Link to={`/parks/${park.id}`} key={trail.id}><p id="park-name">{park.name}</p></Link>
                 </div>
-                <div id="upper-searchbar">
-                  <input
-                    type="text"
-                    placeholder="Enter a city, park, or trail name"
-                  />
-                  <button>
-                    <FontAwesomeIcon icon="search" id="upper-search-icon" />
-                  </button>
-                </div>
+                  <SearchBarContainer type="show-page"/>
               </div>
               <div id="trail-info-container">
                 <div
@@ -61,15 +65,17 @@ class TrailShow extends React.Component {
                     </div>
                     <p>Directions</p>
                   </a>
-                  <a>
-                    <div id="directions-icon-wrapper">
+                  <a className="print-button">
+                    <div onClick={() => window.print()} id="directions-icon-wrapper">
                       <FontAwesomeIcon icon="print" id="print-icon" />
                     </div>
                     <p>Print</p>
                   </a>
                   <a>
                     <div id="directions-icon-wrapper">
+                      <FacebookShareButton url={url}>
                       <FontAwesomeIcon icon="share" id="share-icon" />
+                      </FacebookShareButton>
                     </div>
                     <p>Share</p>
                   </a>
@@ -105,12 +111,15 @@ class TrailShow extends React.Component {
                       <div id="review-header">
                         <p>Reviews</p>
                       </div>
+                      <div id="reviews-summary-create-button-container">
+                        <div id="review-button"></div>
+                      </div>
                       <ReviewIndex reviews={trail.reviews} />
                     </div>
                   </div>
                   <div id="map-other-trails-container">
                     <div id="map-div">
-                      <ParkMap location={[trail.lng, trail.lat]} type="trail"/>
+                      <ParkMap location={[trail.lng, trail.lat]} type="trail" />
                     </div>
                     <div id="other-trails">
                       <h2>Nearby trails</h2>
