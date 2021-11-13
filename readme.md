@@ -9,6 +9,7 @@ The backend for AllJourneys is built using the Ruby on Rails framework, a Postgr
 
 ## Features
 ### Searchbar 
+Users will be able to search for their favorite trails and parks. All searchbars will filter results as the user is typing and hide results if a user clicks somewhere else on the page while keeping the text in the searchbar.
 
 ## MVP Checklist
 * New account creation, login, and guest/demo login
