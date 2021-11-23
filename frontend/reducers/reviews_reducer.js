@@ -7,7 +7,7 @@ import {
 
 const reviewsReducer = (state = [], action) => {
   Object.freeze(state);
-  let newState = Object.assign([], state);
+  const newState = Object.assign([], state);
   switch (action.type) {
     case REMOVE_REVIEW:
       for (let i = 0; i < newState.length; i++) {

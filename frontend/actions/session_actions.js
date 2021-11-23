@@ -37,8 +37,6 @@ export const login = (formUser) => (dispatch) =>
     (err) => dispatch(receiveErrors(err.responseJSON))
   );
 
-export const clearErrors = () => (dispatch) => {
-  return dispatch(clearSessionErrors());
-};
+export const clearErrors = () => (dispatch) => dispatch(clearSessionErrors());
 export const logout = () => (dispatch) =>
   deleteSession().then(() => dispatch(logoutCurrentUser()));

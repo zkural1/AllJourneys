@@ -1,4 +1,7 @@
+/* eslint-disable no-undef */
+/* eslint-disable implicit-arrow-linebreak */
 export const postUser = (user) =>
+  // eslint-disable-next-line implicit-arrow-linebreak
   $.ajax({
     method: "POST",
     url: "/api/users",
