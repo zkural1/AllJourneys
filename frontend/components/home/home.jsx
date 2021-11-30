@@ -21,11 +21,13 @@ class Home extends React.Component {
       list.style.visibility = "hidden";
     }
   }
+
   render() {
-    const slogan = this.props.currentUser ? (
+    const { currentUser } = this.props;
+    const slogan = currentUser ? (
       <div className="slogan-search" id="slogan">
         {" "}
-        Ready to do this?, {this.props.currentUser.firstname}
+        Ready to do this?, {currentUser.firstname}
       </div>
     ) : (
       <div className="slogan-search" id="slogan">

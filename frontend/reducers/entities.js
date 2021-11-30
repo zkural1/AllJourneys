@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
-import trailsReducer from './trails';
-import parksReducer from './parks_reducer';
+import { combineReducers } from "redux";
+import trailsReducer from "./trails";
+import parksReducer from "./parks_reducer";
 
 const entitiesReducer = combineReducers({
   parks: parksReducer,
-  trails: trailsReducer
+  trails: trailsReducer,
 });
 
-export default entitiesReducer
+export default entitiesReducer;

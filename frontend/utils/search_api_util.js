@@ -1,6 +1,5 @@
-export const fetchSearchResults = (query) => {
-    return $.ajax({
-        method: "GET",
-        url: `/api/searches?query=${query}`
-    })
-}
+export const fetchSearchResults = (query) =>
+  $.ajax({
+    method: "GET",
+    url: `/api/searches?query=${query}`,
+  });

@@ -1,16 +1,13 @@
-import * as TrailAPIUtil from "../utils/trail_api_util.js";
+import * as TrailAPIUtil from "../utils/trail_api_util";
 
 export const RECEIVE_TRAIL = "RECEIVE_TRAIL";
 
-export const receiveTrail = (trail) => {
-  return {
-    type: RECEIVE_TRAIL,
-    payload: trail
-  };
-};
+export const receiveTrail = (trail) => ({
+  type: RECEIVE_TRAIL,
+  payload: trail,
+});
 
-export const fetchTrail = (trailId) => (dispatch) => {
-  return TrailAPIUtil.fetchTrail(trailId).then((trail) =>
+export const fetchTrail = (trailId) => (dispatch) =>
+  TrailAPIUtil.fetchTrail(trailId).then((trail) =>
     dispatch(receiveTrail(trail))
   );
-};

@@ -2,7 +2,7 @@ import {
   RECEIVE_SESSION_ERRORS,
   RECEIVE_CURRENT_USER,
   CLEAR_SESSION_ERRORS,
-} from '../actions/session_actions';
+} from "../actions/session_actions";
 
 const sessionErrorsReducer = (state = [], action) => {
   Object.freeze(state);
@@ -17,4 +17,4 @@ const sessionErrorsReducer = (state = [], action) => {
       return state;
   }
 };
-export default sessionErrorsReducer
+export default sessionErrorsReducer;
