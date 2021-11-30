@@ -36,9 +36,8 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(e) {
-    this.state.query
-      ? this.props.clearSearchResults()
-      : this.props.fetchSearchResults(this.state.query);
+    this.state.query ? this.props.fetchSearchResults(this.state.query)
+      : this.props.clearSearchResults();
   }
 
   render() {
