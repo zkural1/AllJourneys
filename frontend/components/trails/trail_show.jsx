@@ -92,17 +92,17 @@ class TrailShow extends React.Component {
     const trails = this.props.otherTrails;
     const trail = this.props.currentTrail;
     const { park, deleteReview, currentUser } = this.props;
-    const { reviewForm, editForm, newReview, review } = this.state;
+    const { reviewForm, editForm, review } = this.state;
     const writeReviewButton = currentUser ? (
       <div id="write-review-button-container">
         <div id="write-review-button" onClick={() => this.switchReviewForm()}>
           Write review
         </div>
-        {this.state.reviewForm ? (
+        {reviewForm ? (
           <ReviewFormContainer
             trail={trail}
             formType={"new"}
-            review={newReview}
+            review={review}
             resetReview={this.resetReview}
             refreshIndex={this.refreshIndex}
           />
