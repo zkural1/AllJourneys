@@ -17,3 +17,5 @@ Users will be able to search for their favorite trails and parks. All searchbars
 
 ### CRUD Functionality for Reviews
 Once users log in, they can see reviews posted on a trail as well as create, edit and delete their own reviews. To create a review, users will submit a 2-part form where they will provide a rating, a brief comment, select an activity they've done, the date they hiked and the trail conditions during the hike.
+
+![ReviewWalkthrough](https://github.com/zkural1/AllJourneys/blob/main/app/assets/images/ReviewWalkthrough.gif?raw=true)
