@@ -49,10 +49,10 @@ class Login extends React.Component {
   render() {
     return (
       <div id="session-form-container">
-      <div className="session-form">
-        <h2>Log in and let's get going</h2>
-        {this.renderErrors()}
-        <form>
+        <div className="session-form">
+          <h2>Log in and let's get going</h2>
+          {this.renderErrors()}
+          <form>
             <input
               type="text"
               value={this.state.email}
@@ -66,10 +66,15 @@ class Login extends React.Component {
               placeholder="Password"
             />
             <button onClick={this.handleSubmit}>Log In</button>
-        </form>
-        <p>Already have an account?<Link to="/login">Log in</Link></p>
-        <p id="demo-user">Just exploring? Hit the trail as a<a onClick={this.demoUser}>demo user</a></p>
-      </div>
+          </form>
+          <p>
+            Don't have an account?<Link to="/signup">Sign up</Link>
+          </p>
+          <p id="demo-user">
+            Just exploring? Hit the trail as a
+            <a onClick={this.demoUser}>demo user</a>
+          </p>
+        </div>
       </div>
     );
   }

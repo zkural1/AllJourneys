@@ -29,13 +29,18 @@ class Api::ReviewsController < ApplicationController
         @review = Review.find_by(id: params[:id])
         if @review.user_id == current_user.id
             @review.destroy!
+            render json: @review.trail_id   
+        else
+            render json: ["Review cannot be destroyed."]
         end
     end 
 
     private
 
     def review_params
-        params.require(:review).permit(:rating, :date, :review_text, :activity_type, :activity_date, :trail_id, :user_id, :tags)
+        new_params = params.require(:review).permit(:id, :rating, :date, :review_text, :activity_type, :activity_date, :trail_id, :user_id, :tags)
+        new_params['tags'] = params['review']['tags'].split(',')
+        new_params
     end
 
 end

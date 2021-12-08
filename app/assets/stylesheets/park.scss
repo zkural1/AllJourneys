@@ -1,4 +1,5 @@
 $base-green: rgb(67, 137, 19);
+$base-green-hover: rgb(90, 167, 39);
 $base-gray: #808080;
 $font-color: rgb(119, 119, 119);
 .park-page {
@@ -57,6 +58,10 @@ $font-color: rgb(119, 119, 119);
       background-color: $base-green;
       color: white;
       border: 0px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: $base-green-hover;
     }
   }
 }
@@ -169,7 +174,7 @@ $font-color: rgb(119, 119, 119);
   }
   #map-div {
     height: 200px;
-    #map-container{
+    #map-container {
       height: 200px;
     }
     canvas {
@@ -321,9 +326,9 @@ $font-color: rgb(119, 119, 119);
 #hard {
   background-color: rgb(103, 103, 103);
 }
-.print-button:hover{
+.print-button:hover {
   cursor: pointer;
 }
-#park-name:hover{
+#park-name:hover {
   text-decoration: underline;
 }

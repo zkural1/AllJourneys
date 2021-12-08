@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ParkMap from "../map/park_map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {FacebookShareButton} from "react-share";
+import { FacebookShareButton } from "react-share";
+import ParkMap from "../map/park_map";
 import SearchBarContainer from "../search/search_container";
 
 class ParkShow extends React.Component {
@@ -13,9 +13,10 @@ class ParkShow extends React.Component {
   componentDidMount() {
     this.props.fetchPark(this.props.match.params.parkId);
   }
+
   render() {
-    const park = this.props.park;
-    const url = window.location.href
+    const { park } = this.props;
+    const url = window.location.href;
     const disp = park ? (
       <div className="park-container">
         <div id="location-search-photos-container">
@@ -27,31 +28,35 @@ class ParkShow extends React.Component {
               <p>›</p>
               <p>{park.name}</p>
             </div>
-            <SearchBarContainer type="show-page"/>
+            <SearchBarContainer type="show-page" />
           </div>
           <div id="park-photos-container">
             <img
               src={park.photos[0].trailUrl}
               alt="park-photos-1"
               className="park-photos"
-            ></img>
+            />
             <img
               src={park.photos[1].trailUrl}
               alt="park-photos-2"
               className="park-photos"
-            ></img>
+            />
             <img
               src={park.photos[2].trailUrl}
               alt="park-photos-3"
               className="park-photos"
-            ></img>
+            />
           </div>
         </div>
         <div id="park-info-container">
           <h2>Best Trails in {park.name}</h2>
           <p>{park.description}</p>
           <div id="map-div">
-            <ParkMap location={[-116.01014083170826, 33.868311460195976,]} type="park" trails={park.trails}/>
+            <ParkMap
+              location={[-116.01014083170826, 33.868311460195976]}
+              type="park"
+              trails={park.trails}
+            />
           </div>
           <div id="map-options">
             <a href="https://www.google.com/maps/dir/Current+Location/33.79,-115.9">
@@ -87,7 +92,7 @@ class ParkShow extends React.Component {
               <h3>Contact</h3>
               <p>{park.contact}</p>
             </div>
-            <div></div>
+            <div />
           </div>
         </div>
         <div id="top-trails-container">
@@ -119,18 +124,21 @@ class ParkShow extends React.Component {
           <div id="trail-container">
             {park.trails.map((trail, idx) => (
               <Link to={`/trails/${trail.id}`} key={trail.id}>
-              <div key={idx + 1} className="trail">
-                <img className="trail-photo" src={park.photos[idx].trailUrl} />
-                <div id={idx + 1} className="trail-info">
-                  <h3>{`#${idx + 1} - ${trail.name}`}</h3>
-                  <p id="park">{park.name}</p>
-                  <div id={trail.difficulty} className="difficulty">
-                    {trail.difficulty}
+                <div key={idx + 1} className="trail">
+                  <img
+                    className="trail-photo"
+                    src={park.photos[idx].trailUrl}
+                  />
+                  <div id={idx + 1} className="trail-info">
+                    <h3>{`#${idx + 1} - ${trail.name}`}</h3>
+                    <p id="park">{park.name}</p>
+                    <div id={trail.difficulty} className="difficulty">
+                      {trail.difficulty}
+                    </div>
+                    <p id="length-time">{`Length: ${trail.length} mi · Est. ${trail.time}`}</p>
+                    <p id="description">{trail.summary}</p>
                   </div>
-                  <p id="length-time">{`Length: ${trail.length} mi · Est. ${trail.time}`}</p>
-                  <p id="description">{trail.summary}</p>
                 </div>
-              </div>
               </Link>
             ))}
           </div>

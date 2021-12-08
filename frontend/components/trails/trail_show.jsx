@@ -1,34 +1,125 @@
+/* eslint-disable */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable no-shadow */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable react/prop-types */
 import React from "react";
 import { Link } from "react-router-dom";
-import ParkMap from "../map/park_map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FacebookShareButton } from "react-share";
+import ParkMap from "../map/park_map";
 import ReviewIndex from "../reviews/review_index";
+import ReviewFormContainer from "../reviews/review_form_container";
 import SearchBarContainer from "../search/search_container";
-import {FacebookShareButton} from "react-share";
+
 class TrailShow extends React.Component {
   constructor(props) {
     super(props);
-    this.switchReviewForm = this.switchReviewForm.bind(this)
+    const cDate = new Date();
+    const cDay = cDate.getDate();
+    const cMonth = cDate.getMonth() + 1;
+    const cYear = cDate.getFullYear();
+    const currentDate = `${cYear}-${cMonth}-${cDay}`;
+    this.state = {
+      refreshReviewIndex: false,
+      reviewForm: false,
+      editForm: false,
+      review: {
+        rating: 5,
+        date: currentDate,
+        activity_date: currentDate,
+        review_text: "",
+        tags: [],
+        activity_type: "Hiking",
+      },
+      newReview: {
+        rating: 5,
+        date: currentDate,
+        activity_date: currentDate,
+        review_text: "",
+        tags: [],
+        activity_type: "Hiking",
+      },
+    };
+    this.refreshIndex = this.refreshIndex.bind(this);
+    this.switchReviewForm = this.switchReviewForm.bind(this);
+    this.switchEditForm = this.switchEditForm.bind(this);
+    this.resetReview = this.resetReview.bind(this);
   }
 
-  switchReviewForm() {
-        this.setState({reviewForm: !this.state.reviewForm})
-    }
-  componentDidUpdate(prevProps, prevState) {
-    if(this.props.location.pathname!==prevProps.location.pathname){
-      this.props.fetchTrail(this.props.match.params.trailId)
-    }
-}
-  componentDidMount() {
+  refreshIndex() {
+    this.setState({ refreshReviewIndex: !this.state.refreshReviewIndex });
     this.props.fetchTrail(this.props.match.params.trailId);
   }
 
+  switchReviewForm(review) {
+    this.setState({ reviewForm: !this.state.reviewForm });
+    if (review) {
+      this.setState({ review: review });
+    }
+  }
+  switchEditForm(review) {
+    this.setState({ editForm: !this.state.editForm });
+    if (review) {
+      this.setState({ review: review });
+    }
+  }
+
+  resetReview() {
+    this.setState((prevState) => ({
+      review: prevState.newReview,
+      reviewForm: false,
+      editForm: false,
+    }));
+  }
+  componentDidMount() {
+    const { fetchTrail, match } = this.props;
+    fetchTrail(match.params.trailId);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.props.fetchTrail(this.props.match.params.trailId);
+    } else if (this.state.refreshReviewIndex) {
+      this.props.fetchTrail(this.props.match.params.trailId);
+      this.setState({ refreshReviewIndex: false });
+    }
+  }
+
   render() {
+    const trails = this.props.otherTrails;
+    const trail = this.props.currentTrail;
+    const { park, deleteReview, currentUser } = this.props;
+    const { reviewForm, editForm, newReview, review } = this.state;
+    const writeReviewButton = currentUser ? (
+      <div id="write-review-button-container">
+        <div id="write-review-button" onClick={() => this.switchReviewForm()}>
+          Write review
+        </div>
+        {this.state.reviewForm ? (
+          <ReviewFormContainer
+            trail={trail}
+            formType={"new"}
+            review={newReview}
+            resetReview={this.resetReview}
+            refreshIndex={this.refreshIndex}
+          />
+        ) : null}
+        {editForm ? (
+          <ReviewFormContainer
+            trail={trail}
+            formType={"edit"}
+            review={review}
+            resetReview={this.resetReview}
+            refreshIndex={this.refreshIndex}
+          />
+        ) : null}
+      </div>
+    ) : null;
     if (this.props.currentTrail) {
-      const trails = this.props.otherTrails;
-      const trail = this.props.currentTrail;
-      const park = this.props.park;
-      const url = window.location.href
+      const url = window.location.href;
       return (
         <div className="trail-page">
           <div className="trail-container">
@@ -39,16 +130,18 @@ class TrailShow extends React.Component {
                   <p>›</p>
                   <p>{park.state}</p>
                   <p>›</p>
-                  <Link to={`/parks/${park.id}`} key={trail.id}><p id="park-name">{park.name}</p></Link>
+                  <Link to={`/parks/${park.id}`} key={trail.id}>
+                    <p id="park-name">{park.name}</p>
+                  </Link>
                 </div>
-                  <SearchBarContainer type="show-page"/>
+                <SearchBarContainer type="show-page" />
               </div>
               <div id="trail-info-container">
                 <div
                   id="trail-photo-container"
                   style={{ backgroundImage: `url(${trail.photoUrl})` }}
                 >
-                  <div id="darkener"></div>
+                  <div id="darkener" />
                   <div id="trail-title">
                     <h2>{trail.name}</h2>
                     <div id={trail.difficulty} className="difficulty">
@@ -65,7 +158,10 @@ class TrailShow extends React.Component {
                     <p>Directions</p>
                   </a>
                   <a className="print-button">
-                    <div onClick={() => window.print()} id="directions-icon-wrapper">
+                    <div
+                      onClick={() => window.print()}
+                      id="directions-icon-wrapper"
+                    >
                       <FontAwesomeIcon icon="print" id="print-icon" />
                     </div>
                     <p>Print</p>
@@ -73,7 +169,7 @@ class TrailShow extends React.Component {
                   <a>
                     <div id="directions-icon-wrapper">
                       <FacebookShareButton url={url}>
-                      <FontAwesomeIcon icon="share" id="share-icon" />
+                        <FontAwesomeIcon icon="share" id="share-icon" />
                       </FacebookShareButton>
                     </div>
                     <p>Share</p>
@@ -110,10 +206,24 @@ class TrailShow extends React.Component {
                       <div id="review-header">
                         <p>Reviews</p>
                       </div>
-                      <div id="reviews-summary-create-button-container">
-                        <div id="review-button"></div>
+                      <div id="reviews-avg-rating-container">
+                        <div id="reviews-avg-rating"></div>
+                        {writeReviewButton}
                       </div>
-                      <ReviewIndex reviews={trail.reviews} />
+                      <div id="reviews-summary-create-button-container">
+                        <div id="review-button" />
+                      </div>
+                      <ReviewIndex
+                        key={this.state.refreshReviewIndex}
+                        trail={trail}
+                        reviews={trail.reviews}
+                        deleteReview={deleteReview}
+                        currentUser={currentUser}
+                        editForm={this.state.editForm}
+                        switchEditForm={this.switchEditForm}
+                        refreshIndex={this.refreshIndex}
+                        reviewIndexState={this.state.refreshReviewIndex}
+                      />
                     </div>
                   </div>
                   <div id="map-other-trails-container">
@@ -148,9 +258,8 @@ class TrailShow extends React.Component {
           </div>
         </div>
       );
-    } else {
-      return <div className="trail-page"></div>;
     }
+    return <div className="trail-page" />;
   }
 }
 

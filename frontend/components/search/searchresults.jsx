@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 class SearchResults extends React.Component {
   render() {
     if (this.props.type === "home-page") {
-      debugger;
       const noResults = (
         <li id="no-results" className="search-result-item">
           No Results Found
@@ -14,7 +13,10 @@ class SearchResults extends React.Component {
       const Results = this.props.results.map((result, idx) => (
         <li className="search-result-item" key={idx}>
           {result.category === "Trail" ? (
-            <Link to={`/trails/${result.id}`} onMouseDown={event => event.preventDefault()}>
+            <Link
+              to={`/trails/${result.id}`}
+              onMouseDown={(event) => event.preventDefault()}
+            >
               <div className="icon">
                 <FontAwesomeIcon icon="map-marker-alt" id="map-marker-alt" />
               </div>
@@ -24,7 +26,10 @@ class SearchResults extends React.Component {
               </div>
             </Link>
           ) : (
-            <Link to={`/parks/${result.id}`} onMouseDown={event => event.preventDefault()}>
+            <Link
+              to={`/parks/${result.id}`}
+              onMouseDown={(event) => event.preventDefault()}
+            >
               <div className="icon">
                 {" "}
                 <FontAwesomeIcon icon="tree" id="tree" />
@@ -51,7 +56,10 @@ class SearchResults extends React.Component {
       const Results = this.props.results.map((result, idx) => (
         <li className="upper-search-result-item" key={idx}>
           {result.category === "Trail" ? (
-            <Link to={`/trails/${result.id}`} onMouseDown={event => event.preventDefault()}>
+            <Link
+              to={`/trails/${result.id}`}
+              onMouseDown={(event) => event.preventDefault()}
+            >
               <div className="icon" id="trail-icon">
                 <FontAwesomeIcon icon="map-signs" id="map-signs" />
               </div>
@@ -61,7 +69,10 @@ class SearchResults extends React.Component {
               </div>
             </Link>
           ) : (
-            <Link to={`/parks/${result.id}`} onMouseDown={event => event.preventDefault()}>
+            <Link
+              to={`/parks/${result.id}`}
+              onMouseDown={(event) => event.preventDefault()}
+            >
               <div className="icon" id="park-icon">
                 {" "}
                 <FontAwesomeIcon icon="tree" id="tree" />

@@ -65,6 +65,11 @@ $base-gray: #808080;
 #arrow {
   color: $base-green;
   font-size: 36px;
+  cursor: pointer;
+}
+#arrow:hover {
+  transition: .3s;
+  transform: scale(1.15)
 }
 #search-results {
   position: absolute;

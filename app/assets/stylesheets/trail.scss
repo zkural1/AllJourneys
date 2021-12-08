@@ -79,6 +79,10 @@ $text-color: rgb(65, 65, 65);
     font-size: 20px;
     color: $base-green;
   }
+  div:hover {
+    transition: .4s;
+    transform: scale(1.1);
+  }
   p {
     position: absolute;
     top: 5px;
@@ -207,6 +211,10 @@ $text-color: rgb(65, 65, 65);
         font-size: 12px;
         color: rgb(122, 122, 122);
       }
+    }
+    a:hover {
+      transition: .4s;
+      transform: scale(1.04);
     }
   }
 }
