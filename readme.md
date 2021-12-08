@@ -2,6 +2,8 @@
 
 #### [Live Site](https://alljourneys.herokuapp.com/#/)
 
+![CompleteHomepage](https://github.com/zkural1/AllJourneys/blob/main/app/assets/images/CompletedHomepage.png?raw=true)
+
 ## About
 AllJourneys is a Alltrails clone where users can search for trails and parks around the world. Users are able to see a detailed page of trail information (dificulty, length, elavation gain, route type, map, etc.) as well as leave reviews if they are signed in. Users will be able read other users reviews and create, edit or delete their own reviews.
 
