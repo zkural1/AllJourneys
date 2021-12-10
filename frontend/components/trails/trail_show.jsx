@@ -72,7 +72,9 @@ class TrailShow extends React.Component {
       review: prevState.newReview,
       reviewForm: false,
       editForm: false,
+      refreshReviewIndex: !this.state.refreshReviewIndex,
     }));
+    this.props.fetchTrail(this.props.match.params.trailId);
   }
   componentDidMount() {
     const { fetchTrail, match } = this.props;

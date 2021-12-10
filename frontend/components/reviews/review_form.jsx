@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -119,14 +121,19 @@ class ReviewForm extends React.Component {
   }
 
   postReview() {
+    const {createReview, updateReview } = this.props;
+    
     let newState = this.state;
     newState.review.tags = this.state.review.tags.join(",");
     this.setState({ newState });
+
     if (this.state.formType === "new") {
-      this.props.createReview(this.state.review);
+      createReview(this.state.review);
     } else {
-      this.props.updateReview(this.state.review);
+      updateReview(this.state.review);
     }
+
+
     this.props.refreshIndex();
     this.setState({ review: this.state.initialReview });
     this.props.resetReview();

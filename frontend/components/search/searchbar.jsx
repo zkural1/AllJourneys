@@ -36,7 +36,8 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(e) {
-    this.state.query ? this.props.fetchSearchResults(this.state.query)
+    this.state.query
+      ? this.props.fetchSearchResults(this.state.query)
       : this.props.clearSearchResults();
   }
 
@@ -73,37 +74,36 @@ class SearchBar extends React.Component {
           ) : null}
         </>
       );
-    } else {
-      return (
-        <div id="show-search-container">
-          <div id="upper-searchbar">
-            <form
-              onFocus={this.handleFocus}
-              onSubmit={this.handleSubmit}
-              onBlur={this.handleBlur}
-              className="search-input"
-            >
-              <input
-                type="text"
-                placeholder="Search by park or trail name"
-                onChange={this.update()}
-              />
-              <button>
-                <FontAwesomeIcon icon="search" id="upper-search-icon" />
-              </button>
-            </form>
-          </div>
-          {this.state.query !== "" ? (
-            <SearchResults
-              results={results}
-              query={this.state.query}
-              fetchSearchResults={this.props.fetchSearchResults}
-              type="show-page"
-            />
-          ) : null}
-        </div>
-      );
     }
+    return (
+      <div id="show-search-container">
+        <div id="upper-searchbar">
+          <form
+            onFocus={this.handleFocus}
+            onSubmit={this.handleSubmit}
+            onBlur={this.handleBlur}
+            className="search-input"
+          >
+            <input
+              type="text"
+              placeholder="Search by park or trail name"
+              onChange={this.update()}
+            />
+            <button>
+              <FontAwesomeIcon icon="search" id="upper-search-icon" />
+            </button>
+          </form>
+        </div>
+        {this.state.query !== "" ? (
+          <SearchResults
+            results={results}
+            query={this.state.query}
+            fetchSearchResults={this.props.fetchSearchResults}
+            type="show-page"
+          />
+        ) : null}
+      </div>
+    );
   }
 }
 
