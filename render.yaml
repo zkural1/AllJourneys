@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
+  - name: dpg-cgh43lvdvk4ml9sgk1dg-a
     databaseName: app_academy_projects_ws17
     user: app_academy_projects_ws17_user
 
 services:
   - type: web
-    name: mysite
+    name: dpg-cgh43lvdvk4ml9sgk1dg-a
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: dpg-cgh43lvdvk4ml9sgk1dg-a
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
