@@ -11,7 +11,8 @@ User.destroy_all
 Park.destroy_all
 Trail.destroy_all
 Review.destroy_all
-default_profile_picture = open("https://alljourneys-seeds.s3.amazonaws.com/defaultProfilePicture.png")
+default_profile_picture_path = Rails.root.join('app', 'assets', 'images', 'defaultProfilePicture.png')
+default_profile_picture = File.open(default_profile_picture_path)
 demo_user = User.create!({
     firstname: "Demo",
     lastname: "User",
