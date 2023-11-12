@@ -28,7 +28,7 @@ user1 = User.create!({
 })
 default_profile_picture_path = Rails.root.join('app', 'assets', 'images', 'defaultProfilePicture.png')
 default_profile_picture = File.open(default_profile_picture_path)
-user1.photo.attach(io: default_profile_picture1, filename: 'DefaultProfilePicture1.jpeg')
+user1.photo.attach(io: default_profile_picture, filename: 'DefaultProfilePicture1.jpeg')
 
 park1 = Park.create!({
     name: "Joshua Tree National Park",
