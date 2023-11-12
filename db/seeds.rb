@@ -42,7 +42,7 @@ park1 = Park.create!({
     acreage:"789,745 acres"
 })
 
-trail1_file1=open('https://alljourneys-seeds.s3.amazonaws.com/trails/BarkerDam.jpeg')
+trail1_file1 = URI.open('https://alljourneys-seeds.s3.amazonaws.com/trails/BarkerDam.jpeg')
 trail1 =Trail.create!({
     name: "Barker Dam Nature Trail",
     summary: "Barker Dam Nature Trail is a 1.3 mile heavily trafficked loop trail located near Joshua Tree, California that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking, walking, and nature trips and is accessible year-round.",
@@ -60,7 +60,7 @@ trail1.photo.attach(io: trail1_file1, filename: 'BarkerDam.jpeg')
 trail1_review1 = Review.create(rating: 5, date: "2021-10-25", review_text: "Well marked trail with a quick and intense elevation gain. Pack water and wear sun protection. Great view at the top!", activity_date: "2021-10-14", activity_type: "Camping", tags: ["No shade", "Off trail", "Rocky"], user_id: user1.id, trail_id: trail1.id)
 trail1_review2 = Review.create(rating: 4, date: "2021-10-25", review_text: "Great workout if you are looking to climb a lot of stairs. The whole trail is stairs - steady climb but not super steep. Gorgeous view from the top - hard to distinguish the Joshua Trees - offers a different view of the National Park. Very windy so hold onto your hats!", activity_date: "2021-10-23", activity_type: "Hiking", user_id: demo_user.id, trail_id: trail1.id)
 
-trail2_file1=open('https://alljourneys-seeds.s3.amazonaws.com/trails/RyanMountain.jpeg')
+trail2_file1=URI.open('https://alljourneys-seeds.s3.amazonaws.com/trails/RyanMountain.jpeg')
 trail2 = Trail.create!({
     name: "Ryan Mountain Trail",
     summary: "Ryan Mountain Trail is a 3 mile heavily trafficked out and back trail located near Twentynine Palms, California that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking and running and is accessible year-round.",
@@ -78,7 +78,7 @@ trail2.photo.attach(io: trail2_file1, filename: 'RyanMountain.jpeg')
 trail2_review1 = Review.create(rating: 5, date: "2021-10-25", review_text: "I had such an amazing time!", activity_date: "2021-10-23", activity_type: "Walking", user_id: demo_user.id, trail_id: trail2.id)
 trail2_review2 = Review.create(rating: 4, date: "2021-10-25", review_text: "Great views from the top. Worth the steps up. Cold and windy at the top, otherwise weather perfect. Only downside, it was very crowded.", activity_date: "2021-10-14", activity_type: "Hiking", tags: ["No shade", "Bugs", "Scramble"],user_id: user1.id, trail_id: trail2.id)
 
-trail3_file1=open('https://alljourneys-seeds.s3.amazonaws.com/trails/ArchRock.jpeg')
+trail3_file1=URI.open('https://alljourneys-seeds.s3.amazonaws.com/trails/ArchRock.jpeg')
 trail3 = Trail.create!({
     name: "Arch Rock Nature Trail",
     summary: "Arch Rock Nature Trail is a 1.2 mile heavily trafficked out and back trail located near Twentynine Palms, California that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking and walking and is accessible year-round.",
